@@ -1,0 +1,6 @@
+rootProject.name = 'booker'
+
+include ":booker-process"
+include ":booker-core"
+include ":booker-ui"
+include ":booker-app"

@@ -1,0 +1,58 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
+}
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    group 'com.zdzisiek'
+    version '0.9-SNAPSHOT'
+    sourceCompatibility = 11
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'kotlin'
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+        compile 'org.jetbrains.kotlin:kotlin-reflect:1.3.41'
+
+        compile 'com.google.inject:guice:4.2.2'
+        compile 'com.google.inject.extensions:guice-assistedinject:4.2.2'
+        compile 'dev.misfitlabs.kotlinguice4:kotlin-guice:1.4.0'
+        compile group: 'net.jmob', name: 'guice.conf', version: '1.4.1'
+
+        runtime group: 'io.reactivex.rxjava2', name: 'rxkotlin', version: '2.0.0'
+        compile group: 'com.github.thomasnield', name: 'rxkotlinfx', version: '2.2.2'
+
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+        testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.1'
+        testCompile 'org.assertj:assertj-process:3.13.2'
+        testCompile group: 'org.awaitility', name: 'awaitility', version: '3.1.2'
+        testCompile 'org.awaitility:awaitility-kotlin:3.1.6'
+        testCompile 'io.mockk:mockk:1.9'
+    }
+
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+
+}
+

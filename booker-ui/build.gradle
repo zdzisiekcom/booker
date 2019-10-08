@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.openjfx:javafx-plugin:0.0.8'
+    }
+}
+
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+apply plugin: 'org.openjfx.javafxplugin'
+
+dependencies {
+    compile project(':booker-core')
+}
+
+javafx {
+    version = '11'
+    modules = ['javafx.controls', 'javafx.fxml']
+}

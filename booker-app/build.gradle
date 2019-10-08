@@ -1,0 +1,11 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    compile project(':booker-core')
+    compile project(':booker-process')
+    compile project(':booker-ui')
+}
+
+mainClassName = 'com.zdzisiek.booker.app.RunApplication'
