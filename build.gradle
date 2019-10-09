@@ -36,7 +36,6 @@ subprojects {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
         testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.1'
-        testCompile 'org.assertj:assertj-process:3.13.2'
         testCompile group: 'org.awaitility', name: 'awaitility', version: '3.1.2'
         testCompile 'org.awaitility:awaitility-kotlin:3.1.6'
         testCompile 'io.mockk:mockk:1.9'
